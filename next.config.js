@@ -1,0 +1,19 @@
+module.exports = {
+  reactStrictMode: true,
+  images: {
+    domains: ['your-image-domain.com'], // Add your image domains here
+  },
+  webpack: (config) => {
+    config.module.rules.push({
+      test: /\.woff2$/,
+      use: {
+        loader: 'file-loader',
+        options: {
+          name: '[name].[hash].[ext]',
+          outputPath: 'fonts/',
+        },
+      },
+    });
+    return config;
+  },
+};

@@ -1,0 +1,13 @@
+:root {
+    --color-purple: #513d86;
+    --color-orange: #f86406;
+    --color-green: #17704d;
+    --color-cream: #fffaf5;
+
+    --font-special-gothic: 'Special Gothic Expanded', sans-serif;
+    --font-liter-regular: 'Liter Regular', sans-serif;
+    --font-liter-medium: 'Liter Medium', sans-serif;
+
+    --max-width: 1100px;
+    --section-spacing: 80px; /* Adjust as needed for vertical spacing */
+}

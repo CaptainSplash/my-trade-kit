@@ -1,0 +1,72 @@
+body {
+    margin: 0;
+    font-family: 'Liter', sans-serif;
+    background-color: #fffaf5;
+    color: #333;
+}
+
+h1, h2 {
+    font-family: 'Special Gothic Expanded', sans-serif;
+    letter-spacing: -1.5%;
+}
+
+h1 {
+    font-size: 64px;
+}
+
+h2 {
+    font-size: 36px;
+}
+
+section {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 80px 20px;
+}
+
+#hero {
+    background: linear-gradient(to right, #513d86, #f86406, #17704d);
+    color: white;
+    text-align: center;
+    padding: 100px 20px;
+}
+
+button {
+    background-color: #f86406;
+    color: white;
+    font-family: 'Liter', sans-serif;
+    font-weight: 500;
+    border: none;
+    border-radius: 10px;
+    padding: 12px 24px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #d85500;
+}
+
+.service-card {
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 20px 0;
+    text-align: center;
+}
+
+blockquote {
+    font-style: italic;
+    color: #777;
+    border-left: 4px solid #513d86;
+    padding-left: 20px;
+    margin: 20px 0;
+}
+
+footer {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: #f86406;
+    color: white;
+}
