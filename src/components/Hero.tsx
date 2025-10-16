@@ -2,7 +2,27 @@ import React from 'react';
 
 const Hero: React.FC = () => {
     return (
-        <section id="hero" className="gradient-bg" style={{ marginTop: '-80px', paddingTop: '120px' }}>
+        <section 
+            id="hero" 
+            style={{ 
+                paddingTop: '280px',
+                paddingBottom: '160px',
+                backgroundImage: 'url("/Brand gradients.png")',
+                backgroundSize: 'cover',
+                backgroundPosition: 'center top',
+                backgroundRepeat: 'no-repeat',
+                minHeight: '600px',
+                width: '100vw',
+                maxWidth: '100vw',
+                position: 'relative',
+                left: '50%',
+                right: '50%',
+                marginLeft: '-50vw',
+                marginRight: '-50vw',
+                marginTop: '-100px',
+                zIndex: 1
+            }}
+        >
             <div className="container text-center">
                 <h1 style={{ 
                     fontFamily: 'var(--font-special-gothic)', 

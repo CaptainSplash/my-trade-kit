@@ -11,7 +11,7 @@ const Page = () => {
   return (
     <>
       <Header />
-      <main style={{ paddingTop: '80px' }}>
+      <main style={{ paddingTop: '0px', marginTop: '0px' }}>
         <Hero />
         <About />
         <Services />

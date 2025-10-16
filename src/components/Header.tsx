@@ -1,23 +1,57 @@
 import React from 'react';
+import Image from 'next/image';
 
 const Header: React.FC = () => {
   return (
-    <header className="fixed top-0 left-0 right-0 bg-white/90 backdrop-blur-sm z-50 border-b border-gray-100">
-      <div className="container">
-        <div className="flex items-center justify-between py-4">
-          <div className="logo">
-            <h1 style={{ 
-              fontFamily: 'var(--font-special-gothic)', 
-              fontSize: '24px', 
-              color: 'var(--color-purple)',
-              margin: 0
-            }}>
-              My Trade Kit
-            </h1>
+    <header style={{ 
+      position: 'absolute',
+      top: '0',
+      left: '0',
+      right: '0',
+      background: 'transparent',
+      zIndex: 99999,
+      margin: '0',
+      padding: '5px 20px',
+      width: '100%'
+    }}>
+      <div style={{
+        maxWidth: '1200px',
+        margin: '0 auto',
+        width: '100%',
+        padding: '0 20px'
+      }}>
+        <div style={{
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+          width: '100%',
+          paddingTop: '8px',
+          paddingBottom: '8px'
+        }}>
+          <div className="logo flex items-center">
+            <Image 
+              src="/Logo white.png" 
+              alt="My Trade Kit Logo" 
+              width={180} 
+              height={60}
+              priority
+              style={{ objectFit: 'contain' }}
+            />
           </div>
-          <a href="#contact" className="btn-primary">
-            Get in Touch
-          </a>
+          <div style={{
+            display: 'flex',
+            alignItems: 'center',
+            gap: '8px',
+            backgroundColor: 'rgba(255, 255, 255, 0.1)',
+            padding: '10px 20px',
+            borderRadius: '8px',
+            color: 'white',
+            fontSize: '16px',
+            fontWeight: '500',
+            backdropFilter: 'blur(10px)'
+          }}>
+            📞 07891305508
+          </div>
         </div>
       </div>
     </header>
