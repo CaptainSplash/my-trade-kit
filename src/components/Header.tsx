@@ -38,19 +38,37 @@ const Header: React.FC = () => {
               style={{ objectFit: 'contain' }}
             />
           </div>
-          <div style={{
-            display: 'flex',
-            alignItems: 'center',
-            gap: '8px',
-            backgroundColor: 'rgba(255, 255, 255, 0.1)',
-            padding: '10px 20px',
-            borderRadius: '8px',
-            color: 'white',
-            fontSize: '16px',
-            fontWeight: '500',
-            backdropFilter: 'blur(10px)'
-          }}>
-            📞 07891305508
+          <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+            <div style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: '8px',
+              backgroundColor: 'rgba(255, 255, 255, 0.1)',
+              padding: '10px 20px',
+              borderRadius: '8px',
+              color: 'white',
+              fontSize: '16px',
+              fontWeight: '500',
+              backdropFilter: 'blur(10px)'
+            }}>
+              📞 07344144672
+            </div>
+            <a href="#contact" style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: '8px',
+              backgroundColor: 'rgba(255, 255, 255, 0.1)',
+              padding: '10px 20px',
+              borderRadius: '8px',
+              color: 'white',
+              fontSize: '16px',
+              fontWeight: '500',
+              backdropFilter: 'blur(10px)',
+              textDecoration: 'none',
+              cursor: 'pointer'
+            }}>
+              Contact
+            </a>
           </div>
         </div>
       </div>

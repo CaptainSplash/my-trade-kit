@@ -5,7 +5,6 @@ const Testimonials: React.FC = () => {
         <section id="testimonials" className="section-spacing">
             <div className="container text-center">
                 <h2 style={{ 
-                    fontFamily: 'var(--font-special-gothic)', 
                     fontSize: '40px', 
                     letterSpacing: '-0.02em',
                     marginBottom: '60px',
@@ -34,7 +33,7 @@ const Testimonials: React.FC = () => {
                         fontSize: '16px', 
                         fontStyle: 'normal',
                         color: 'var(--color-purple)',
-                        fontFamily: 'var(--font-liter-medium)'
+                        fontWeight: '500'
                     }}>
                         — Sarah Johnson, Local Business Owner
                     </footer>

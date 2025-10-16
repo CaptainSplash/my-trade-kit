@@ -1,29 +1,5 @@
 @import './variables.css';
 
-@font-face {
-  font-family: 'Special Gothic Expanded';
-  src: url('/fonts/SpecialGothicExpanded-Regular.woff2') format('woff2');
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Liter Regular';
-  src: url('/fonts/Liter-Regular.woff2') format('woff2');
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Liter Medium';
-  src: url('/fonts/Liter-Medium.woff2') format('woff2');
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
-}
-
 * {
   margin: 0;
   padding: 0;
@@ -37,7 +13,7 @@ html {
 }
 
 body {
-  font-family: var(--font-liter-regular);
+  font-family: 'Liter', sans-serif;
   font-size: 16px;
   line-height: 1.6;
   color: #333;
@@ -57,7 +33,7 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-special-gothic);
+  font-family: 'Special Gothic Expanded One', sans-serif;
   letter-spacing: -0.02em;
   margin: 0;
 }
@@ -109,7 +85,7 @@ a {
 .btn-primary {
   background-color: var(--color-orange);
   color: white;
-  font-family: var(--font-liter-medium);
+  font-family: 'Liter', sans-serif;
   padding: 16px 32px;
   border-radius: 12px;
   border: none;

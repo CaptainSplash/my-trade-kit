@@ -25,13 +25,13 @@ const Hero: React.FC = () => {
         >
             <div className="container text-center">
                 <h1 style={{ 
-                    fontFamily: 'var(--font-special-gothic)', 
                     fontSize: '64px',
                     lineHeight: '1.1',
                     marginBottom: '24px',
-                    letterSpacing: '-0.02em'
+                    letterSpacing: '-0.02em',
+                    fontWeight: '400'
                 }}>
-                    Digital care for busy businesses.
+                    Focus on your business — while we handle your digital care
                 </h1>
                 <p style={{ 
                     fontSize: '20px', 
@@ -40,10 +40,10 @@ const Hero: React.FC = () => {
                     margin: '0 auto 40px auto',
                     opacity: '0.95'
                 }}>
-                    We take the stress out of websites, branding, and online presence so you can focus on what you do best – running your business.
+                    Your all-in-one digital partner for websites, marketing, and social — helping your business show up, stand out, and succeed online.
                 </p>
                 <a href="#contact" className="btn-primary" style={{ fontSize: '18px', padding: '20px 40px' }}>
-                    Book a Call
+                    Get Started
                 </a>
             </div>
         </section>

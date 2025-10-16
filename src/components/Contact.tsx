@@ -32,7 +32,6 @@ const Contact: React.FC = () => {
             <div className="container">
                 <div style={{ textAlign: 'center', marginBottom: '60px' }}>
                     <h2 style={{ 
-                        fontFamily: 'var(--font-special-gothic)', 
                         fontSize: '40px', 
                         letterSpacing: '-0.02em',
                         marginBottom: '20px',
@@ -62,7 +61,7 @@ const Contact: React.FC = () => {
                         <label style={{ 
                             display: 'block', 
                             marginBottom: '8px',
-                            fontFamily: 'var(--font-liter-medium)',
+                            fontWeight: '500',
                             color: 'var(--color-purple)',
                             fontSize: '16px'
                         }}>
@@ -78,7 +77,6 @@ const Contact: React.FC = () => {
                                 border: '2px solid #e5e5e5',
                                 borderRadius: '12px',
                                 fontSize: '16px',
-                                fontFamily: 'var(--font-liter-regular)',
                                 transition: 'border-color 0.3s ease'
                             }}
                             required
@@ -89,7 +87,7 @@ const Contact: React.FC = () => {
                         <label style={{ 
                             display: 'block', 
                             marginBottom: '8px',
-                            fontFamily: 'var(--font-liter-medium)',
+                            fontWeight: '500',
                             color: 'var(--color-purple)',
                             fontSize: '16px'
                         }}>
@@ -105,7 +103,6 @@ const Contact: React.FC = () => {
                                 border: '2px solid #e5e5e5',
                                 borderRadius: '12px',
                                 fontSize: '16px',
-                                fontFamily: 'var(--font-liter-regular)',
                                 transition: 'border-color 0.3s ease'
                             }}
                             required
@@ -116,7 +113,7 @@ const Contact: React.FC = () => {
                         <label style={{ 
                             display: 'block', 
                             marginBottom: '8px',
-                            fontFamily: 'var(--font-liter-medium)',
+                            fontWeight: '500',
                             color: 'var(--color-purple)',
                             fontSize: '16px'
                         }}>
@@ -132,7 +129,6 @@ const Contact: React.FC = () => {
                                 border: '2px solid #e5e5e5',
                                 borderRadius: '12px',
                                 fontSize: '16px',
-                                fontFamily: 'var(--font-liter-regular)',
                                 resize: 'vertical',
                                 minHeight: '120px',
                                 transition: 'border-color 0.3s ease'

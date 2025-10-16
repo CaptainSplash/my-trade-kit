@@ -20,7 +20,6 @@ const Services: React.FC = () => {
     <section id="services" className="section-spacing" style={{ backgroundColor: 'rgba(23, 112, 77, 0.05)' }}>
       <div className="container">
         <h2 style={{ 
-          fontFamily: 'var(--font-special-gothic)', 
           fontSize: '40px', 
           letterSpacing: '-0.02em',
           marginBottom: '60px',
@@ -39,7 +38,6 @@ const Services: React.FC = () => {
           {servicesData.map((service, index) => (
             <div key={index} className="card">
               <h3 style={{ 
-                fontFamily: 'var(--font-special-gothic)', 
                 fontSize: '24px',
                 marginBottom: '16px',
                 color: 'var(--color-purple)'

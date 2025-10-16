@@ -5,7 +5,6 @@ const About: React.FC = () => {
         <section id="about" className="section-spacing">
             <div className="container text-center">
                 <h2 style={{ 
-                    fontFamily: 'var(--font-special-gothic)', 
                     fontSize: '40px', 
                     letterSpacing: '-0.02em',
                     marginBottom: '32px',
@@ -14,7 +13,6 @@ const About: React.FC = () => {
                     Care Through Clarity
                 </h2>
                 <p style={{ 
-                    fontFamily: 'var(--font-liter-regular)', 
                     fontSize: '18px', 
                     lineHeight: '1.7',
                     maxWidth: '800px',
