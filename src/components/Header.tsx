@@ -38,7 +38,7 @@ const Header: React.FC = () => {
               style={{ objectFit: 'contain' }}
             />
           </div>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }} className="hidden md:flex">
+          <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }} className="header-buttons hidden md:flex">
             <div style={{
               display: 'flex',
               alignItems: 'center',

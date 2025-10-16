@@ -101,6 +101,12 @@ a {
   transform: translateY(-2px);
 }
 
+@media (max-width: 768px) {
+  .header-buttons {
+    display: none !important;
+  }
+}
+
 .card {
   background: white;
   border-radius: 24px;
