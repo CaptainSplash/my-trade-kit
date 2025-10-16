@@ -1,3 +1,10 @@
-.vercel
-node_modules/
-node_modules/@next/swc-win32-x64-msvc/next-swc.win32-x64-msvc.node
+/.vercel
+/node_modules
+.next
+out
+.DS_Store
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+package-lock.json
