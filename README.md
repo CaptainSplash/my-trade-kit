@@ -1,108 +1,137 @@
-# Digital Care Website
+# My Trade Kit Website
 
-A modern, responsive one-page website for Digital Care - providing digital services for busy businesses.
+A modern, responsive one-page website for My Trade Kit - providing digital marketing services for tradies.
 
 ## 🚀 Features
 
 - **Modern Design**: Clean, professional layout with custom typography and brand colors
 - **Responsive**: Optimized for desktop, tablet, and mobile devices
-- **Fast Performance**: Built with Next.js for optimal loading speeds
+- **Fast Performance**: Built with Next.js 13 for optimal loading speeds
 - **SEO Optimized**: Proper meta tags and semantic HTML structure
-- **Smooth Scrolling**: Enhanced navigation with scroll-to-top functionality
-- **Contact Form**: Interactive form with loading states
+- **Scroll-to-Top**: Enhanced navigation with smooth scroll-to-top functionality
+- **Contact Form**: Interactive form for client inquiries
 
 ## 🎨 Brand Identity
 
 - **Primary Purple**: #513d86
-- **Orange Accent**: #f86406  
+- **Orange Accent**: #f86406
 - **Green Trust**: #17704d
 - **Background**: #fffaf5
 
 ## 🛠️ Tech Stack
 
-- Next.js 13
-- React 18
-- TypeScript
-- Tailwind CSS
-- Custom CSS Variables
+- **Next.js**: 13.5.11 (App Router)
+- **React**: 18
+- **TypeScript**: Type-safe development
+- **Tailwind CSS**: Utility-first styling
+- **Custom Fonts**: Special Gothic Expanded One, Liter
+
+## 📋 Sections
+
+- **Header**: Logo, phone number, and contact CTA button (responsive - buttons hidden on mobile)
+- **Hero**: Engaging introduction with brand gradient background
+- **About**: Mission and values explanation
+- **Services**: Overview of digital marketing services offered
+- **Testimonials**: Client feedback to build trust
+- **Contact**: Simple inquiry form
+- **Footer**: Company information and links
+- **Scroll to Top**: Smooth scroll-to-top button
 
 ## 🏃‍♂️ Getting Started
 
 ### Prerequisites
-- Node.js 16+ 
+- Node.js 16+
 - npm or yarn
 
 ### Installation
 
-1. Clone the repository
-2. Install dependencies:
+1. Clone the repository:
+```bash
+git clone https://github.com/CaptainSplash/my-trade-kit.git
+```
+
+2. Navigate to the project directory:
+```bash
+cd my-trade-kit
+```
+
+3. Install dependencies:
 ```bash
 npm install
 ```
 
-3. Start the development server:
+4. Start the development server:
 ```bash
 npm run dev
 ```
 
-4. Open [http://localhost:3000](http://localhost:3000) in your browser
+5. Open [http://localhost:3000](http://localhost:3000) in your browser
 
-## Core Values
-- **Care Through Clarity**
-- **Partnership with Integrity**
-- **Empowered Excellence**
+## 🎨 Design Guidelines
 
-## Features
-- **Hero Section**: Engaging introduction with a call-to-action button.
-- **About Section**: Clear explanation of the mission and values.
-- **Services Section**: Overview of services offered with descriptive cards.
-- **Testimonials Section**: Client feedback to build trust.
-- **Contact Section**: Simple form for inquiries.
+### Brand Colors
+- **Purple**: #513d86 (Primary headings, accents)
+- **Orange**: #f86406 (CTA buttons, highlights)
+- **Green**: #17704d (Backgrounds, trust elements)
+- **Light Cream**: #fffaf5 (Page background)
 
-## Design Guidelines
-- **Brand Colors**:
-  - Purple: #513d86 (Primary headings, accents)
-  - Orange: #f86406 (CTA buttons, highlights)
-  - Green: #17704d (Backgrounds, trust elements)
-  - Light cream/off-white: #fffaf5 (Page background)
-  
-- **Typography**:
-  - Headlines: Special Gothic Expanded Regular
-  - Body: Liter Regular
+### Typography
+- **Headlines**: Special Gothic Expanded One
+- **Body**: Liter Regular
 
-- **Layout**:
-  - Max width: 1100 px; center content; generous vertical spacing (80–120 px between sections).
-  - Gradient backgrounds for hero and CTA sections.
+### Layout
+- Max width: 1100px
+- Center content
+- Generous vertical spacing (80–120px between sections)
+- Gradient backgrounds for hero and CTA sections
 
-## Technologies Used
-- **Next.js**: Framework for building the website.
-- **TypeScript**: For type safety and better development experience.
-- **Tailwind CSS**: For styling and responsive design.
-- **Vercel**: For deployment.
+## 📦 Project Structure
 
-## Installation
-1. Clone the repository:
-   ```
-   git clone [repository-url]
-   ```
-2. Navigate to the project directory:
-   ```
-   cd digital-care-website
-   ```
-3. Install dependencies:
-   ```
-   npm install
-   ```
-4. Run the development server:
-   ```
-   npm run dev
-   ```
+```
+my-trade-kit/
+├── src/
+│   ├── app/
+│   │   ├── layout.tsx
+│   │   └── page.tsx
+│   ├── components/
+│   │   ├── Header.tsx
+│   │   ├── Hero.tsx
+│   │   ├── About.tsx
+│   │   ├── Services.tsx
+│   │   ├── Testimonials.tsx
+│   │   ├── Contact.tsx
+│   │   ├── Footer.tsx
+│   │   └── ScrollToTop.tsx
+│   └── styles/
+│       ├── globals.css
+│       ├── components.css
+│       └── variables.css
+├── public/
+│   ├── Logo white.png
+│   ├── Brand gradients.png
+│   ├── favicon.ico
+│   └── fonts/
+├── package.json
+├── tailwind.config.js
+├── tsconfig.json
+└── vercel.json
+```
 
-## Deployment
-This project is configured to be deployed on Vercel. Ensure that the `vercel.json` file is correctly set up for deployment settings.
+## 🚀 Deployment
 
-## License
-This project is licensed under the MIT License. See the LICENSE file for details.
+This project is configured to be deployed on Vercel:
 
-## Contact
-For inquiries, please reach out via the contact form on the website.
+1. Push your changes to GitHub
+2. Connect your repository to Vercel
+3. Vercel will automatically deploy from the `master` branch
+4. The `vercel.json` file ensures proper routing
+
+**Live Site**: [Add your Vercel URL here]
+
+## 📝 License
+
+This project is licensed under the MIT License.
+
+## 📧 Contact
+
+For inquiries, please reach out via the contact form on the website or email at: [your-email@example.com]

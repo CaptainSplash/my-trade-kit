@@ -1,5 +1,12 @@
 @import './variables.css';
 
+.font-heading {
+  font-family: 'Special Gothic Expanded One', 'Special Gothic Expanded', Arial, sans-serif;
+}
+.font-body {
+  font-family: 'Liter', Arial, sans-serif;
+}
+
 * {
   margin: 0;
   padding: 0;
