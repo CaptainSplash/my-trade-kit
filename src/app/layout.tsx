@@ -8,6 +8,7 @@ export const metadata = {
   authors: [{ name: 'My Trade Kit' }],
   viewport: 'width=device-width, initial-scale=1',
   robots: 'index, follow',
+  metadataBase: new URL('https://mytradekit.vercel.app'),
   openGraph: {
     title: 'My Trade Kit - Digital care for busy businesses',
     description: 'We take the stress out of websites, branding, and online presence so you can focus on what you do best – running your business.',
