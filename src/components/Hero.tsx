@@ -19,7 +19,7 @@ const Hero: React.FC = () => {
                 right: '50%',
                 marginLeft: '-50vw',
                 marginRight: '-50vw',
-                marginTop: '-100px',
+                marginTop: '0',
                 zIndex: 1
             }}
         >
