@@ -28,22 +28,53 @@ const Contact: React.FC = () => {
     };
 
     return (
-        <section id="contact" className="section-spacing gradient-bg">
-            <div className="container">
+        <section
+            id="contact"
+            className="section-spacing"
+            style={{
+                position: 'relative',
+                minHeight: '600px',
+                width: '100vw',
+                maxWidth: '100vw',
+                left: '50%',
+                right: '50%',
+                marginLeft: '-50vw',
+                marginRight: '-50vw',
+                marginTop: '0',
+                zIndex: 1,
+                overflow: 'hidden',
+                background: 'none',
+            }}
+        >
+            <div style={{
+                position: 'absolute',
+                top: 0,
+                left: 0,
+                width: '100%',
+                height: '100%',
+                backgroundImage: 'url("/Brand gradients.png")',
+                backgroundSize: 'cover',
+                backgroundPosition: 'center top',
+                backgroundRepeat: 'no-repeat',
+                transform: 'scaleX(-1)',
+                zIndex: 0,
+                pointerEvents: 'none',
+            }} />
+            <div className="container" style={{ position: 'relative', zIndex: 1 }}>
                 <div style={{ textAlign: 'center', marginBottom: '60px' }}>
-                    <h2 style={{ 
-                        fontSize: '40px', 
+                    <h2 style={{
+                        fontSize: '40px',
                         letterSpacing: '-0.02em',
                         marginBottom: '20px',
-                        color: 'white'
+                        color: 'white',
                     }}>
                         Let's make your digital presence effortless.
                     </h2>
-                    <p style={{ 
-                        fontSize: '18px', 
+                    <p style={{
+                        fontSize: '18px',
                         color: 'rgba(255, 255, 255, 0.9)',
                         maxWidth: '600px',
-                        margin: '0 auto'
+                        margin: '0 auto',
                     }}>
                         Ready to take the stress out of your online presence? Let's chat about how we can help your business thrive.
                     </p>
