@@ -183,3 +183,13 @@ footer {
   border-radius: 24px !important;
   overflow: hidden;
 }
+
+/* How It Works Grid - Mobile Reordering */
+@media (max-width: 767px) {
+  .how-it-works-box-3 {
+    order: 4;
+  }
+  .how-it-works-box-4 {
+    order: 3;
+  }
+}
