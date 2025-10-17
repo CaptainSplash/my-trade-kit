@@ -184,6 +184,14 @@ footer {
   overflow: hidden;
 }
 
+/* Testimonials: collapse to 1 column on mobile only */
+@media (max-width: 767px) {
+  .testimonials-grid {
+    grid-template-columns: 1fr !important;
+    gap: 24px;
+  }
+}
+
 /* How It Works Grid - Mobile Reordering */
 @media (max-width: 767px) {
   .how-it-works-box-3 {
