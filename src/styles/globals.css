@@ -192,4 +192,10 @@ footer {
   .how-it-works-box-4 {
     order: 3;
   }
+  .how-it-works-box-5 {
+    order: 5;
+  }
+  .how-it-works-box-6 {
+    order: 6;
+  }
 }

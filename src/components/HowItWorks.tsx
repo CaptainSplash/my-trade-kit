@@ -31,7 +31,7 @@ export default function HowItWorks() {
         </div>
         
         {/* Box 5 */}
-        <div style={{ border: '2px solid black', minHeight: '250px', padding: '20px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+        <div className="how-it-works-box-5" style={{ border: '2px solid black', minHeight: '250px', padding: '20px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
           <div style={{ textAlign: 'left' }}>
             <div style={{ fontWeight: 'bold', marginBottom: '8px', fontFamily: "'Special Gothic Expanded One', sans-serif", fontSize: '24px' }}>3. Stay supported, always</div>
             <div>→ Ongoing updates, reports, and account management for peace of mind.</div>
@@ -39,7 +39,7 @@ export default function HowItWorks() {
         </div>
         
         {/* Box 6 */}
-        <div style={{ border: '2px solid #f86406', minHeight: '250px', padding: '20px', borderRadius: '24px', overflow: 'hidden', background: '#fff7ed', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+        <div className="how-it-works-box-6" style={{ border: '2px solid #f86406', minHeight: '250px', padding: '20px', borderRadius: '24px', overflow: 'hidden', background: '#fff7ed', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
           <img src="/How it works imagery/care.png" alt="Care" style={{ width: '100%', height: '100%', objectFit: 'contain', borderRadius: '5%', clipPath: 'inset(0% round 5%)' }} />
         </div>
       </div>
