@@ -1,3 +1,66 @@
+/* Get Started section: stack image and box pairs vertically on mobile */
+@media (max-width: 767px) {
+  .get-started-pairs {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 24px !important;
+  }
+}
+
+
+
+.get-started-pairs {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.get-started-pair {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.get-started-img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 12px;
+  margin: 0 auto;
+  background-color: #eee;
+}
+
+.get-started-box {
+  background: white;
+  border: 2px solid #17704d;
+  border-radius: 16px;
+  padding: 24px;
+  width: 100%;
+  margin-top: 0.5rem;
+}
+
+
+@media (max-width: 767px) {
+  .get-started-pairs {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    max-width: 100%;
+    margin: 0;
+  }
+  .get-started-pair {
+    width: 100%;
+  }
+  .get-started-img {
+    width: 100%;
+    max-width: 100%;
+  }
+  .get-started-box {
+    width: 100%;
+  }
+}
 @import './variables.css';
 
 .font-heading {
