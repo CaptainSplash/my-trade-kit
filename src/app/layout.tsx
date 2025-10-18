@@ -25,7 +25,7 @@ export default function RootLayout({
   return (
     <html lang="en" style={{ margin: 0, padding: 0 }}>
       <head>
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" href="/White on black.png" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link href="https://fonts.googleapis.com/css2?family=Liter&family=Special+Gothic+Expanded+One&display=swap" rel="stylesheet" />

@@ -6,6 +6,7 @@ import Testimonials from '../components/Testimonials';
 import Contact from '../components/Contact';
 import Footer from '../components/Footer';
 import ScrollToTop from '../components/ScrollToTop';
+import Gallery from '../components/Gallery';
 
 const Page = () => {
   return (
@@ -13,9 +14,10 @@ const Page = () => {
       <Header />
       <main style={{ paddingTop: '0px', marginTop: '0px' }}>
         <Hero />
+        <Gallery />
         <HowItWorks />
         <Testimonials />
-  <GetStarted />
+        <GetStarted />
         <Contact />
       </main>
       <Footer />

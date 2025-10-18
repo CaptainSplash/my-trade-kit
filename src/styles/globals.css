@@ -1,3 +1,28 @@
+  /* .container .btn-primary {
+    font-size: 15px !important;
+    padding: 14px 24px !important;
+  } */
+/* Responsive hero text and spacing */
+@media (max-width: 767px) {
+  .container .btn-primary {
+    font-size: 15px !important;
+    padding: 14px 24px !important;
+  }
+  .hero-title {
+    font-size: 32px !important;
+    margin-bottom: 14px !important;
+  }
+  .hero-subtext {
+    font-size: 16px !important;
+    margin-bottom: 24px !important;
+    max-width: 95vw !important;
+  }
+  #hero {
+    padding-top: 120px !important;
+    padding-bottom: 60px !important;
+    min-height: 340px !important;
+  }
+}
 /* Get Started section: stack image and box pairs vertically on mobile */
 @media (max-width: 767px) {
   .get-started-pairs {
@@ -342,6 +367,76 @@ footer {
 .rounded-img {
   border-radius: 24px !important;
   overflow: hidden;
+}
+
+/* Gallery marquee */
+.section-spacing#gallery,
+#gallery.section-spacing {
+  padding-top: 32px;
+  padding-bottom: 32px;
+}
+
+.section-spacing#gallery .marquee-img,
+#gallery.section-spacing .marquee-img {
+  height: 180px;
+}
+
+@media (max-width: 767px) {
+  .section-spacing#gallery,
+  #gallery.section-spacing {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+  .section-spacing#gallery .marquee-img,
+  #gallery.section-spacing .marquee-img {
+    height: 120px;
+  }
+}
+.gallery-marquee {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+
+.marquee-track {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  width: max-content;
+  animation: marquee-left 40s linear infinite;
+}
+
+.marquee-img {
+  height: 200px;
+  width: auto;
+  object-fit: cover;
+  user-select: none;
+  pointer-events: none;
+}
+
+@keyframes marquee-left {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.marquee-fade {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 60px;
+  pointer-events: none;
+}
+.marquee-fade--left {
+  left: 0;
+  background: linear-gradient(90deg, var(--color-cream) 0%, rgba(255,255,255,0) 100%);
+}
+.marquee-fade--right {
+  right: 0;
+  background: linear-gradient(270deg, var(--color-cream) 0%, rgba(255,255,255,0) 100%);
+}
+
+@media (max-width: 767px) {
+  .marquee-img { height: 140px; }
 }
 
 /* Testimonials: collapse to 1 column on mobile only */
