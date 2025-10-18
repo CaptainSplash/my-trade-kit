@@ -40,12 +40,14 @@
   gap: 32px;
   max-width: 1200px;
   margin: 0 auto;
+  align-items: stretch; /* ensure grid items match tallest in row */
 }
 
 .get-started-pair {
   display: flex;
   flex-direction: column;
   align-items: center;
+  height: 100%;
 }
 
 .get-started-img {
@@ -58,32 +60,56 @@
 }
 
 .get-started-box {
-  background: white;
-  border: 2px solid #17704d;
-  border-radius: 16px;
+  /* Opaque chip-style card, closer to header buttons */
+  background: #f5f7fa; /* solid light gray, no transparency */
+  border: 1px solid rgba(0,0,0,0.08);
+  border-radius: 8px; /* match header button corner radius */
   padding: 24px;
   width: 100%;
   margin-top: 0.5rem;
+  box-shadow: none; /* align with chip-like look */
+  /* Equal height behavior */
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
 }
 
 
 @media (max-width: 767px) {
+  /* Reduce overall vertical padding just for Get Started on mobile */
+  #get-started.section-spacing {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+
   .get-started-pairs {
     display: flex;
     flex-direction: column;
-    gap: 24px;
+    gap: 16px; /* tighter spacing on mobile to reduce section length */
     max-width: 100%;
     margin: 0;
   }
   .get-started-pair {
     width: 100%;
+    gap: 8px; /* reduce vertical spacing between image and box */
   }
   .get-started-img {
-    width: 100%;
+    /* Keep images square and fully visible on mobile */
+    width: min(80vw, 320px);
     max-width: 100%;
+    aspect-ratio: 1 / 1;
+    height: auto; /* works with aspect-ratio to keep square */
+    object-fit: contain; /* no cropping; show full image */
+    display: block;
+    margin: 0 auto; /* center the image */
   }
   .get-started-box {
     width: 100%;
+    /* On mobile, don't force equal heights; let content size naturally */
+    flex: initial;
+    /* Tighten padding and spacing to shorten section */
+    padding: 16px;
+    margin-top: 6px;
   }
 }
 @import './variables.css';
