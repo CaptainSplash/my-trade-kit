@@ -193,8 +193,38 @@ a {
   transform: translateY(-2px);
 }
 
-@media (max-width: 768px) {
+/* Hide header action buttons on mobile only (match 767px breakpoint used elsewhere) */
+@media (max-width: 767px) {
   .header-buttons {
+    display: none !important;
+  }
+
+  /* Reduce side padding so logo sits closer to the left edge */
+  .site-header .site-header-wrap {
+    padding-left: 8px !important;
+    padding-right: 8px !important;
+  }
+
+  /* Slightly reduce logo width and align to center vertically */
+  .site-logo {
+    display: flex;
+    align-items: center;
+  }
+  .site-logo-img {
+    width: 170px !important;
+    height: auto !important;
+    display: block;
+  }
+
+  /* Align hamburger and logo vertically by matching heights and padding */
+  .mobile-menu-button {
+    height: 44px;
+  }
+}
+
+/* Ensure hamburger button is hidden on tablet/desktop */
+@media (min-width: 768px) {
+  .hamburger-btn {
     display: none !important;
   }
 }
