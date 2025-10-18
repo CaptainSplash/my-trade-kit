@@ -1,16 +1,38 @@
 "use client";
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 
 const Header: React.FC = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [isSticky, setIsSticky] = useState(false);
+  const headerRef = useRef<HTMLElement | null>(null);
+  const logoSrc = isSticky ? '/Logo black.png' : '/Logo white.png';
+
+  useEffect(() => {
+    const onScroll = () => setIsSticky(window.scrollY > 10);
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
+
+  // Prevent layout jump when header becomes fixed by adding top padding to body
+  useEffect(() => {
+    const h = headerRef.current?.offsetHeight || 0;
+    if (isSticky) {
+      document.body.style.paddingTop = `${h}px`;
+    } else {
+      document.body.style.paddingTop = '0px';
+    }
+    return () => {
+      document.body.style.paddingTop = '0px';
+    };
+  }, [isSticky]);
   return (
-    <header className="site-header" style={{ 
-      position: 'absolute',
-      top: '0',
-      left: '0',
-      right: '0',
-      background: 'transparent',
+    <header ref={headerRef} className={`site-header${isSticky ? ' is-sticky' : ''}`} style={{ 
+      position: isSticky ? 'fixed' : 'absolute',
+      top: 0,
+      left: 0,
+      right: 0,
       zIndex: 99999,
       margin: '0',
       padding: '5px 20px',
@@ -23,17 +45,15 @@ const Header: React.FC = () => {
         padding: '0 20px',
         position: 'relative'
       }}>
-        <div style={{
+        <div className="header-row" style={{
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'space-between',
-          width: '100%',
-          paddingTop: '8px',
-          paddingBottom: '8px'
+          width: '100%'
         }}>
           <div className="logo site-logo flex items-center">
             <Image 
-              src="/Logo white.png" 
+              src={logoSrc} 
               alt="My Trade Kit Logo" 
               width={180} 
               height={60}
