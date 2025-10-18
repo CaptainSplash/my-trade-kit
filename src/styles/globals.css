@@ -449,6 +449,9 @@ footer {
 
 /* How It Works Grid - Mobile Reordering */
 @media (max-width: 767px) {
+  #how-it-works .mx-auto > div {
+    grid-template-columns: 1fr !important;
+  }
   .how-it-works-box-3 {
     order: 4;
   }
@@ -460,5 +463,13 @@ footer {
   }
   .how-it-works-box-6 {
     order: 6;
+  }
+  
+  /* Smaller text on mobile for How It Works */
+  #how-it-works div[style*="fontSize: '22px'"] {
+    font-size: 18px !important;
+  }
+  #how-it-works div[style*="fontSize: '16px'"] {
+    font-size: 14px !important;
   }
 }
