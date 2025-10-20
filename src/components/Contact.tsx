@@ -10,21 +10,33 @@ const Contact: React.FC = () => {
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
+        if (isSubmitting) return;
         setIsSubmitting(true);
-        
-        // Simulate form submission
-        await new Promise(resolve => setTimeout(resolve, 1000));
-        
-        // Handle form submission logic here
-        console.log('Form submitted:', { name, email, message });
-        
-        // Reset form
-        setName('');
-        setEmail('');
-        setMessage('');
-        setIsSubmitting(false);
-        
-        alert('Thank you for your message! We\'ll get back to you soon.');
+        try {
+            const res = await fetch('/api/contact', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ name, email, message })
+            });
+            const data = await res.json();
+            if (!res.ok) throw new Error(data?.error || 'Failed to send message');
+
+            // Reset form on success
+            setName('');
+            setEmail('');
+            setMessage('');
+
+            // If using Ethereal in dev, log preview URL for debugging
+            if (data?.previewUrl) {
+                console.log('Preview email URL (dev only):', data.previewUrl);
+            }
+            alert('Thank you for your message! We\'ll get back to you soon.');
+        } catch (err: any) {
+            console.error(err);
+            alert(err?.message || 'Sorry, something went wrong. Please try again.');
+        } finally {
+            setIsSubmitting(false);
+        }
     };
 
     return (
@@ -164,7 +176,7 @@ const Contact: React.FC = () => {
                                 minHeight: '120px',
                                 transition: 'border-color 0.3s ease'
                             }}
-                            placeholder="Tell us about your project and how we can help..."
+                            placeholder="Tell us about your business and how we can help..."
                             required
                         />
                     </div>

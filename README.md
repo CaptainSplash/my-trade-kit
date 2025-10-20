@@ -1,3 +1,47 @@
+# my-trade-kit
+
+One-page MVP website for My Trade Kit - digital services for busy businesses.
+## Contact form email setup
+
+The contact form posts to `/api/contact` and sends an email using SMTP. In production you must provide SMTP credentials; locally, if nothing is configured, the server will use an Ethereal test account and log a preview link in the console.
+1) Create your `.env.local` from the template
+
+Copy `.env.local.example` to `.env.local` and fill in values:
+```
+CONTACT_TO=mytradekit@gmail.com
+CONTACT_FROM=hello@mytradekit.com
+SMTP_HOST=smtp.yourprovider.com
+SMTP_PORT=587
+SMTP_SECURE=false
+SMTP_USER=your_smtp_username
+SMTP_PASS=your_smtp_password_or_app_password
+```
+2) Provider quick-starts
+
+- Gmail (requires 2FA + App Password):
+	- SMTP_HOST=smtp.gmail.com
+	- SMTP_PORT=465
+	- SMTP_SECURE=true
+	- SMTP_USER=yourgmail@gmail.com
+	- SMTP_PASS=your_app_password
+
+- Brevo/Sendinblue:
+	- SMTP_HOST=smtp-relay.sendinblue.com
+	- SMTP_PORT=587
+	- SMTP_SECURE=false
+	- SMTP_USER=your_account_login_or_api_key
+	- SMTP_PASS=your_smtp_password
+
+- Mailgun (EU example):
+	- SMTP_HOST=smtp.eu.mailgun.org
+	- SMTP_PORT=587
+	- SMTP_SECURE=false
+	- SMTP_USER=postmaster@YOUR_DOMAIN
+	- SMTP_PASS=your_mailgun_smtp_password
+
+3) Test locally
+
+- Start the dev server and submit the form. If you didn’t set SMTP locally, check your terminal for an Ethereal “Preview URL” to view the email.
 # My Trade Kit Website
 
 A modern, responsive one-page website for My Trade Kit - providing digital marketing services for tradies.
