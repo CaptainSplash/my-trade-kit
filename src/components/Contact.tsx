@@ -9,8 +9,8 @@ const Contact: React.FC = () => {
     const [message, setMessage] = useState('');
     const [isSubmitting, setIsSubmitting] = useState(false);
 
-    // Formspree endpoint (replace with your Formspree form ID)
-    const formspreeEndpoint = "https://formspree.io/f/mvgwnpry";
+        // Formspree endpoint
+        const formspreeEndpoint = "https://formspree.io/f/mvgwnpry";
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
@@ -114,7 +114,7 @@ const Contact: React.FC = () => {
                             style={{
                                 width: '100%',
                                 padding: '16px',
-                                border: '2px solid #e5e5e5',
+                                border: '2px solid #cccccc',
                                 borderRadius: '12px',
                                 fontSize: '16px',
                                 transition: 'border-color 0.3s ease',
@@ -142,7 +142,7 @@ const Contact: React.FC = () => {
                             style={{
                                 width: '100%',
                                 padding: '16px',
-                                border: '2px solid #e5e5e5',
+                                border: '2px solid #cccccc',
                                 borderRadius: '12px',
                                 fontSize: '16px',
                                 transition: 'border-color 0.3s ease',
@@ -163,7 +163,7 @@ const Contact: React.FC = () => {
                             style={{
                                 width: '100%',
                                 padding: '16px',
-                                border: '2px solid #e5e5e5',
+                                border: '2px solid #cccccc',
                                 borderRadius: '12px',
                                 fontSize: '16px',
                                 transition: 'border-color 0.3s ease',
@@ -191,7 +191,7 @@ const Contact: React.FC = () => {
                             style={{
                                 width: '100%',
                                 padding: '16px',
-                                border: '2px solid #e5e5e5',
+                                border: '2px solid #cccccc',
                                 borderRadius: '12px',
                                 fontSize: '16px',
                                 resize: 'vertical',

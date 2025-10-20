@@ -145,25 +145,6 @@ body {
 }
 
 /* Development guide lines - max-width boundaries */
-body::before,
-body::after {
-  content: '';
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  width: 2px;
-  background-color: red;
-  z-index: 9999;
-  pointer-events: none;
-}
-
-body::before {
-  left: calc(50% - 550px); /* 1100px / 2 = 550px */
-}
-
-body::after {
-  right: calc(50% - 550px);
-}
 
 .container {
   max-width: var(--max-width);
