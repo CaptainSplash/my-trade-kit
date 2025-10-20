@@ -5,34 +5,30 @@ import React, { useState } from 'react';
 const Contact: React.FC = () => {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
+    const [phone, setPhone] = useState('');
     const [message, setMessage] = useState('');
     const [isSubmitting, setIsSubmitting] = useState(false);
+
+    // Formspree endpoint (replace with your Formspree form ID)
+    const formspreeEndpoint = "https://formspree.io/f/mvgwnpry";
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         if (isSubmitting) return;
         setIsSubmitting(true);
         try {
-            const res = await fetch('/api/contact', {
+            const res = await fetch(formspreeEndpoint, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ name, email, message })
+                body: JSON.stringify({ name, email, phone, message })
             });
-            const data = await res.json();
-            if (!res.ok) throw new Error(data?.error || 'Failed to send message');
-
-            // Reset form on success
+            if (!res.ok) throw new Error('Failed to send message');
             setName('');
             setEmail('');
+            setPhone('');
             setMessage('');
-
-            // If using Ethereal in dev, log preview URL for debugging
-            if (data?.previewUrl) {
-                console.log('Preview email URL (dev only):', data.previewUrl);
-            }
             alert('Thank you for your message! We\'ll get back to you soon.');
         } catch (err: any) {
-            console.error(err);
             alert(err?.message || 'Sorry, something went wrong. Please try again.');
         } finally {
             setIsSubmitting(false);
@@ -106,7 +102,8 @@ const Contact: React.FC = () => {
                             marginBottom: '8px',
                             fontWeight: '500',
                             color: 'var(--color-purple)',
-                            fontSize: '16px'
+                            fontSize: '16px',
+                            fontFamily: 'Special Gothic Expanded One, sans-serif'
                         }}>
                             Name
                         </label>
@@ -120,7 +117,8 @@ const Contact: React.FC = () => {
                                 border: '2px solid #e5e5e5',
                                 borderRadius: '12px',
                                 fontSize: '16px',
-                                transition: 'border-color 0.3s ease'
+                                transition: 'border-color 0.3s ease',
+                                fontFamily: 'Liter, Arial, sans-serif'
                             }}
                             required
                         />
@@ -132,7 +130,8 @@ const Contact: React.FC = () => {
                             marginBottom: '8px',
                             fontWeight: '500',
                             color: 'var(--color-purple)',
-                            fontSize: '16px'
+                            fontSize: '16px',
+                            fontFamily: 'Special Gothic Expanded One, sans-serif'
                         }}>
                             Email
                         </label>
@@ -146,9 +145,31 @@ const Contact: React.FC = () => {
                                 border: '2px solid #e5e5e5',
                                 borderRadius: '12px',
                                 fontSize: '16px',
-                                transition: 'border-color 0.3s ease'
+                                transition: 'border-color 0.3s ease',
+                                fontFamily: 'Liter, Arial, sans-serif'
                             }}
                             required
+                        />
+                    </div>
+                    
+                    <div style={{ marginBottom: '24px' }}>
+                        <label style={{ display: 'block', marginBottom: '8px', fontWeight: '500', color: 'var(--color-purple)', fontSize: '16px', fontFamily: 'Special Gothic Expanded One, sans-serif' }}>
+                            Phone Number
+                        </label>
+                        <input
+                            type="tel"
+                            value={phone}
+                            onChange={(e) => setPhone(e.target.value)}
+                            style={{
+                                width: '100%',
+                                padding: '16px',
+                                border: '2px solid #e5e5e5',
+                                borderRadius: '12px',
+                                fontSize: '16px',
+                                transition: 'border-color 0.3s ease',
+                                fontFamily: 'Liter, Arial, sans-serif'
+                            }}
+                            placeholder="(optional)"
                         />
                     </div>
                     
@@ -158,7 +179,8 @@ const Contact: React.FC = () => {
                             marginBottom: '8px',
                             fontWeight: '500',
                             color: 'var(--color-purple)',
-                            fontSize: '16px'
+                            fontSize: '16px',
+                            fontFamily: 'Special Gothic Expanded One, sans-serif'
                         }}>
                             Message
                         </label>
@@ -174,7 +196,8 @@ const Contact: React.FC = () => {
                                 fontSize: '16px',
                                 resize: 'vertical',
                                 minHeight: '120px',
-                                transition: 'border-color 0.3s ease'
+                                transition: 'border-color 0.3s ease',
+                                fontFamily: 'Liter, Arial, sans-serif'
                             }}
                             placeholder="Tell us about your business and how we can help..."
                             required
