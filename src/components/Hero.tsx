@@ -14,7 +14,8 @@ const heroStyle = {
     marginLeft: '-50vw',
     marginRight: '-50vw',
     marginTop: '0',
-    zIndex: 1
+    zIndex: 1,
+    willChange: 'transform'
 };
 
 const titleStyle = {

@@ -1,6 +1,4 @@
-import React from 'react';
-
-const GetStarted: React.FC = () => {
+const GetStarted = () => {
   return (
     <section id="get-started" className="section-spacing" style={{ backgroundColor: 'rgba(23, 112, 77, 0.05)' }}>
       <div className="container">
@@ -10,7 +8,7 @@ const GetStarted: React.FC = () => {
         <div className="get-started-pairs">
           {/* Pair 1 */}
           <div className="get-started-pair">
-            <img src="/Get started imagery/speech.png" alt="Speech bubble" className="get-started-img" />
+            <img src="/Get started imagery/speech.png" alt="Speech bubble" className="get-started-img" loading="lazy" />
             <div className="get-started-box">
               <h3 style={{ fontFamily: "'Special Gothic Expanded One', sans-serif", fontSize: '20px', marginBottom: '12px', color: '#17704d' }}>1. Start with a quick chat</h3>
               <p style={{ fontSize: '16px', marginBottom: '12px', color: '#333' }}>
@@ -23,7 +21,7 @@ const GetStarted: React.FC = () => {
           </div>
           {/* Pair 2 */}
           <div className="get-started-pair">
-            <img src="/Get started imagery/clipboard.png" alt="Clipboard" className="get-started-img" />
+            <img src="/Get started imagery/clipboard.png" alt="Clipboard" className="get-started-img" loading="lazy" />
             <div className="get-started-box">
               <h3 style={{ fontFamily: "'Special Gothic Expanded One', sans-serif", fontSize: '20px', marginBottom: '12px', color: '#17704d' }}>2. Get your custom plan</h3>
               <p style={{ fontSize: '16px', marginBottom: '12px', color: '#333' }}>
@@ -36,7 +34,7 @@ const GetStarted: React.FC = () => {
           </div>
           {/* Pair 3 */}
           <div className="get-started-pair">
-            <img src="/Get started imagery/cog.png" alt="Cog" className="get-started-img" />
+            <img src="/Get started imagery/cog.png" alt="Cog" className="get-started-img" loading="lazy" />
             <div className="get-started-box">
               <h3 style={{ fontFamily: "'Special Gothic Expanded One', sans-serif", fontSize: '20px', marginBottom: '12px', color: '#17704d' }}>3. We handle the rest</h3>
               <p style={{ fontSize: '16px', marginBottom: '12px', color: '#333' }}>
@@ -49,7 +47,7 @@ const GetStarted: React.FC = () => {
           </div>
           {/* Pair 4 */}
           <div className="get-started-pair">
-            <img src="/Get started imagery/graph.png" alt="Graph" className="get-started-img" />
+            <img src="/Get started imagery/graph.png" alt="Graph" className="get-started-img" loading="lazy" />
             <div className="get-started-box">
               <h3 style={{ fontFamily: "'Special Gothic Expanded One', sans-serif", fontSize: '20px', marginBottom: '12px', color: '#17704d' }}>4. Review & grow</h3>
               <p style={{ fontSize: '16px', marginBottom: '12px', color: '#333' }}>

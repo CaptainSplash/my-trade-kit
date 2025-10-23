@@ -1,4 +1,3 @@
-import React from 'react';
 import '../styles/globals.css';
 
 export const metadata = {
@@ -28,7 +27,14 @@ export default function RootLayout({
         <link rel="icon" type="image/png" href="/White on black.png" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link href="https://fonts.googleapis.com/css2?family=Liter&family=Special+Gothic+Expanded+One&display=swap" rel="stylesheet" />
+        <link 
+          href="https://fonts.googleapis.com/css2?family=Liter&family=Special+Gothic+Expanded+One&display=swap" 
+          rel="stylesheet" 
+        />
+        {/* Preload critical hero background image */}
+        <link rel="preload" href="/Brand gradients.png" as="image" />
+        {/* Preload critical logo */}
+        <link rel="preload" href="/Logo white.png" as="image" />
       </head>
       <body style={{ margin: 0, padding: 0, backgroundColor: 'transparent' }}>
         {children}

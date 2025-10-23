@@ -19,8 +19,9 @@ const inputStyle = {
     border: '2px solid #cccccc',
     borderRadius: '12px',
     fontSize: '16px',
-    transition: 'border-color 0.3s ease',
-    fontFamily: 'Liter, Arial, sans-serif'
+    transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+    fontFamily: 'Liter, Arial, sans-serif',
+    outline: 'none'
 } as const;
 
 export default function Contact() {
@@ -128,6 +129,8 @@ export default function Contact() {
                             value={formData.name}
                             onChange={handleChange}
                             style={inputStyle}
+                            onFocus={(e) => e.currentTarget.style.borderColor = 'var(--color-purple)'}
+                            onBlur={(e) => e.currentTarget.style.borderColor = '#cccccc'}
                             required
                         />
                     </div>
@@ -140,6 +143,8 @@ export default function Contact() {
                             value={formData.email}
                             onChange={handleChange}
                             style={inputStyle}
+                            onFocus={(e) => e.currentTarget.style.borderColor = 'var(--color-purple)'}
+                            onBlur={(e) => e.currentTarget.style.borderColor = '#cccccc'}
                             required
                         />
                     </div>
@@ -152,6 +157,8 @@ export default function Contact() {
                             value={formData.phone}
                             onChange={handleChange}
                             style={inputStyle}
+                            onFocus={(e) => e.currentTarget.style.borderColor = 'var(--color-purple)'}
+                            onBlur={(e) => e.currentTarget.style.borderColor = '#cccccc'}
                             placeholder="(optional)"
                         />
                     </div>
@@ -168,6 +175,8 @@ export default function Contact() {
                                 resize: 'vertical',
                                 minHeight: '120px'
                             }}
+                            onFocus={(e) => e.currentTarget.style.borderColor = 'var(--color-purple)'}
+                            onBlur={(e) => e.currentTarget.style.borderColor = '#cccccc'}
                             placeholder="Tell us about your business and how we can help..."
                             required
                         />

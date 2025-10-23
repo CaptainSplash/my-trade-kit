@@ -131,6 +131,8 @@ html {
   scroll-behavior: smooth;
   margin: 0;
   padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 body {
@@ -142,9 +144,8 @@ body {
   margin: 0;
   padding: 0;
   position: relative;
+  overflow-x: hidden;
 }
-
-/* Development guide lines - max-width boundaries */
 
 .container {
   max-width: var(--max-width);
@@ -216,13 +217,18 @@ a {
   cursor: pointer;
   text-decoration: none;
   display: inline-block;
-  transition: all 0.3s ease;
   font-size: 16px;
+  transition: all 0.2s ease;
 }
 
 .btn-primary:hover {
   background-color: #e55505;
-  transform: translateY(-2px);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
 }
 
 /* Hide header action buttons on mobile only (match 767px breakpoint used elsewhere) */
@@ -266,20 +272,16 @@ a {
   border-radius: 24px;
   padding: 32px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease;
   text-align: center;
   margin: 20px 0;
-}
-
-.card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
 }
 
 section {
   max-width: var(--max-width);
   margin: 0 auto;
   padding: var(--section-spacing) 20px;
+  content-visibility: auto;
+  contain-intrinsic-size: auto 500px;
 }
 
 /* Sticky header styles */
@@ -354,6 +356,8 @@ section {
   color: white;
   text-align: center;
   padding: 120px 20px;
+  /* Add placeholder background color for faster perceived load */
+  background-color: #513d86;
 }
 
 blockquote {
@@ -411,6 +415,7 @@ footer {
   align-items: center;
   width: max-content;
   animation: marquee-left 40s linear infinite;
+  will-change: transform;
 }
 
 .marquee-img {
@@ -422,8 +427,8 @@ footer {
 }
 
 @keyframes marquee-left {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+  0% { transform: translate3d(0, 0, 0); }
+  100% { transform: translate3d(-50%, 0, 0); }
 }
 
 .marquee-fade {

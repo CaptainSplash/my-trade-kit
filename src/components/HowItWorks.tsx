@@ -4,7 +4,8 @@ const textBoxStyle = {
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
-  color: '#000000'
+  color: '#000000',
+  borderRadius: '8px'
 };
 
 const imageBoxStyle = {
@@ -59,14 +60,14 @@ export default function HowItWorks() {
         {/* Box 2 */}
         <div style={imageBoxStyle}>
           <div style={imageContainerStyle}>
-            <img src="/How it works imagery/website.png" alt="Website" style={imageStyle} />
+            <img src="/How it works imagery/website.png" alt="Website" style={imageStyle} loading="lazy" />
           </div>
         </div>
         
         {/* Box 3 */}
         <div className="how-it-works-box-3" style={imageBoxStyle}>
           <div style={imageContainerStyle}>
-            <img src="/How it works imagery/growth.png" alt="Growth" style={imageStyle} />
+            <img src="/How it works imagery/growth.png" alt="Growth" style={imageStyle} loading="lazy" />
           </div>
         </div>
         
@@ -89,7 +90,7 @@ export default function HowItWorks() {
         {/* Box 6 */}
         <div className="how-it-works-box-6" style={imageBoxStyle}>
           <div style={imageContainerStyle}>
-            <img src="/How it works imagery/care.png" alt="Care" style={imageStyle} />
+            <img src="/How it works imagery/care.png" alt="Care" style={imageStyle} loading="lazy" />
           </div>
         </div>
       </div>

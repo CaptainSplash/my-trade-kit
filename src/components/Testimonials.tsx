@@ -13,7 +13,6 @@ const imageContainerStyle = {
     margin: '0 auto 20px auto',
     boxShadow: '0 8px 32px rgba(0,0,0,0.28)',
     transform: 'rotateY(-8deg) scale(1.04)',
-    transition: 'transform 0.3s cubic-bezier(.4,2,.6,1)',
     background: '#111'
 };
 
@@ -105,7 +104,7 @@ export default function Testimonials() {
                     {testimonials.map((testimonial, index) => (
                         <div key={index} style={cardStyle}>
                             <div style={imageContainerStyle}>
-                                <img src={testimonial.image} alt={testimonial.alt} style={imageStyle} />
+                                <img src={testimonial.image} alt={testimonial.alt} style={imageStyle} loading="lazy" />
                             </div>
                             <h3 style={titleStyle}>
                                 {testimonial.title}

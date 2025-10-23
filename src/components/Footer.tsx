@@ -54,10 +54,22 @@ export default function Footer() {
 
                 {/* Social icons */}
                 <div style={{ display: 'flex', gap: '24px', marginBottom: '8px' }}>
-                    <a href="https://www.instagram.com/mytradekithq/?hl=en" target="_blank" rel="noopener" aria-label="Instagram" style={socialLinkStyle}>
+                    <a 
+                        href="https://www.instagram.com/mytradekithq/?hl=en" 
+                        target="_blank" 
+                        rel="noopener" 
+                        aria-label="Instagram" 
+                        style={socialLinkStyle}
+                    >
                         <img src="/Social media icons/instagram-svgrepo-com.svg" alt="Instagram" style={iconStyle} />
                     </a>
-                    <a href="https://linkedin.com" target="_blank" rel="noopener" aria-label="LinkedIn" style={socialLinkStyle}>
+                    <a 
+                        href="https://linkedin.com" 
+                        target="_blank" 
+                        rel="noopener" 
+                        aria-label="LinkedIn" 
+                        style={socialLinkStyle}
+                    >
                         <img src="/Social media icons/linkedin-svgrepo-com.svg" alt="LinkedIn" style={iconStyle} />
                     </a>
                 </div>

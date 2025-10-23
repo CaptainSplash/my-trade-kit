@@ -1,5 +1,3 @@
-import React from 'react';
-
 // Auto-scrolling gallery using images from /public/Gallery
 const images = [
   '/Gallery/11_envelope and app.webp',
@@ -27,7 +25,7 @@ export default function Gallery() {
               src={src}
               alt="Gallery item"
               className="marquee-img rounded-img"
-              loading="eager"
+              loading="lazy"
               draggable={false}
             />
           ))}
@@ -37,7 +35,7 @@ export default function Gallery() {
               src={src}
               alt="Gallery item duplicate"
               className="marquee-img rounded-img"
-              loading="eager"
+              loading="lazy"
               draggable={false}
             />
           ))}

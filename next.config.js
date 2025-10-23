@@ -1,19 +1,16 @@
 module.exports = {
   reactStrictMode: true,
+  compress: true,
+  poweredByHeader: false,
   images: {
-    domains: ['your-image-domain.com'], // Add your image domains here
+    domains: [],
+    formats: ['image/webp'],
+    minimumCacheTTL: 60,
   },
-  webpack: (config) => {
-    config.module.rules.push({
-      test: /\.woff2$/,
-      use: {
-        loader: 'file-loader',
-        options: {
-          name: '[name].[hash].[ext]',
-          outputPath: 'fonts/',
-        },
-      },
-    });
-    return config;
+  experimental: {
+    optimizeCss: true,
+  },
+  compiler: {
+    removeConsole: process.env.NODE_ENV === 'production',
   },
 };
