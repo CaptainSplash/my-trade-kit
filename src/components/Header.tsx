@@ -1,12 +1,33 @@
 "use client";
-import React, { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState, useCallback } from 'react';
 import Image from 'next/image';
 
-const Header: React.FC = () => {
+const buttonStyle = {
+  display: 'flex',
+  alignItems: 'center',
+  gap: '8px',
+  backgroundColor: 'rgba(255, 255, 255, 0.1)',
+  padding: '10px 20px',
+  borderRadius: '8px',
+  color: 'white',
+  fontSize: '16px',
+  fontWeight: '500',
+  backdropFilter: 'blur(10px)'
+} as const;
+
+const linkStyle = {
+  ...buttonStyle,
+  textDecoration: 'none',
+  cursor: 'pointer'
+} as const;
+
+export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [isSticky, setIsSticky] = useState(false);
-  const headerRef = useRef<HTMLElement | null>(null);
-  const logoSrc = isSticky ? '/Logo black.png' : '/Logo white.png';
+  const headerRef = useRef<HTMLElement>(null);
+
+  const toggleMenu = useCallback(() => setMenuOpen(v => !v), []);
+  const closeMenu = useCallback(() => setMenuOpen(false), []);
 
   useEffect(() => {
     const onScroll = () => setIsSticky(window.scrollY > 10);
@@ -15,18 +36,14 @@ const Header: React.FC = () => {
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
-  // Prevent layout jump when header becomes fixed by adding top padding to body
   useEffect(() => {
     const h = headerRef.current?.offsetHeight || 0;
-    if (isSticky) {
-      document.body.style.paddingTop = `${h}px`;
-    } else {
-      document.body.style.paddingTop = '0px';
-    }
-    return () => {
-      document.body.style.paddingTop = '0px';
-    };
+    document.body.style.paddingTop = isSticky ? `${h}px` : '0px';
+    return () => { document.body.style.paddingTop = '0px'; };
   }, [isSticky]);
+
+  const logoSrc = isSticky ? '/Logo black.png' : '/Logo white.png';
+
   return (
     <header ref={headerRef} className={`site-header${isSticky ? ' is-sticky' : ''}`} style={{ 
       position: isSticky ? 'fixed' : 'absolute',
@@ -63,34 +80,10 @@ const Header: React.FC = () => {
             />
           </div>
           <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }} className="header-buttons hidden md:flex">
-            <div style={{
-              display: 'flex',
-              alignItems: 'center',
-              gap: '8px',
-              backgroundColor: 'rgba(255, 255, 255, 0.1)',
-              padding: '10px 20px',
-              borderRadius: '8px',
-              color: 'white',
-              fontSize: '16px',
-              fontWeight: '500',
-              backdropFilter: 'blur(10px)'
-            }}>
+            <div style={buttonStyle}>
               📞 07344144672
             </div>
-            <a href="#contact" style={{
-              display: 'flex',
-              alignItems: 'center',
-              gap: '8px',
-              backgroundColor: 'rgba(255, 255, 255, 0.1)',
-              padding: '10px 20px',
-              borderRadius: '8px',
-              color: 'white',
-              fontSize: '16px',
-              fontWeight: '500',
-              backdropFilter: 'blur(10px)',
-              textDecoration: 'none',
-              cursor: 'pointer'
-            }}>
+            <a href="#contact" style={linkStyle}>
               Contact
             </a>
           </div>
@@ -98,7 +91,7 @@ const Header: React.FC = () => {
           <button
             aria-label="Toggle menu"
             aria-expanded={menuOpen}
-            onClick={() => setMenuOpen(v => !v)}
+            onClick={toggleMenu}
             className="mobile-menu-button hamburger-btn flex md:hidden"
             style={{
               alignItems: 'center',
@@ -145,7 +138,7 @@ const Header: React.FC = () => {
           }}>
             <a
               href="tel:07344144672"
-              onClick={() => setMenuOpen(false)}
+              onClick={closeMenu}
               style={{
                 display: 'flex',
                 alignItems: 'center',
@@ -160,7 +153,7 @@ const Header: React.FC = () => {
             </a>
             <a
               href="#contact"
-              onClick={() => setMenuOpen(false)}
+              onClick={closeMenu}
               style={{
                 display: 'flex',
                 alignItems: 'center',
@@ -178,6 +171,4 @@ const Header: React.FC = () => {
       </div>
     </header>
   );
-};
-
-export default Header;
+}

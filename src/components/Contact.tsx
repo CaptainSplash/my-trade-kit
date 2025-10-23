@@ -1,38 +1,62 @@
 "use client";
 
-import React, { useState } from 'react';
+import { useState, FormEvent } from 'react';
 
-const Contact: React.FC = () => {
-    const [name, setName] = useState('');
-    const [email, setEmail] = useState('');
-    const [phone, setPhone] = useState('');
-    const [message, setMessage] = useState('');
+const FORMSPREE_ENDPOINT = "https://formspree.io/f/mvgwnpry";
+
+const labelStyle = {
+    display: 'block',
+    marginBottom: '8px',
+    fontWeight: '500',
+    color: 'var(--color-purple)',
+    fontSize: '16px',
+    fontFamily: 'Special Gothic Expanded One, sans-serif'
+} as const;
+
+const inputStyle = {
+    width: '100%',
+    padding: '16px',
+    border: '2px solid #cccccc',
+    borderRadius: '12px',
+    fontSize: '16px',
+    transition: 'border-color 0.3s ease',
+    fontFamily: 'Liter, Arial, sans-serif'
+} as const;
+
+export default function Contact() {
+    const [formData, setFormData] = useState({
+        name: '',
+        email: '',
+        phone: '',
+        message: ''
+    });
     const [isSubmitting, setIsSubmitting] = useState(false);
 
-        // Formspree endpoint
-        const formspreeEndpoint = "https://formspree.io/f/mvgwnpry";
-
-    const handleSubmit = async (e: React.FormEvent) => {
+    const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         if (isSubmitting) return;
+        
         setIsSubmitting(true);
         try {
-            const res = await fetch(formspreeEndpoint, {
+            const res = await fetch(FORMSPREE_ENDPOINT, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ name, email, phone, message })
+                body: JSON.stringify(formData)
             });
+            
             if (!res.ok) throw new Error('Failed to send message');
-            setName('');
-            setEmail('');
-            setPhone('');
-            setMessage('');
+            
+            setFormData({ name: '', email: '', phone: '', message: '' });
             alert('Thank you for your message! We\'ll get back to you soon.');
-        } catch (err: any) {
-            alert(err?.message || 'Sorry, something went wrong. Please try again.');
+        } catch (err) {
+            alert((err as Error).message || 'Sorry, something went wrong. Please try again.');
         } finally {
             setIsSubmitting(false);
         }
+    };
+
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+        setFormData(prev => ({ ...prev, [e.target.name]: e.target.value }));
     };
 
     return (
@@ -97,107 +121,52 @@ const Contact: React.FC = () => {
                     boxShadow: '0 20px 40px rgba(0, 0, 0, 0.2)'
                 }}>
                     <div style={{ marginBottom: '24px' }}>
-                        <label style={{ 
-                            display: 'block', 
-                            marginBottom: '8px',
-                            fontWeight: '500',
-                            color: 'var(--color-purple)',
-                            fontSize: '16px',
-                            fontFamily: 'Special Gothic Expanded One, sans-serif'
-                        }}>
-                            Name
-                        </label>
+                        <label style={labelStyle}>Name</label>
                         <input
                             type="text"
-                            value={name}
-                            onChange={(e) => setName(e.target.value)}
-                            style={{
-                                width: '100%',
-                                padding: '16px',
-                                border: '2px solid #cccccc',
-                                borderRadius: '12px',
-                                fontSize: '16px',
-                                transition: 'border-color 0.3s ease',
-                                fontFamily: 'Liter, Arial, sans-serif'
-                            }}
+                            name="name"
+                            value={formData.name}
+                            onChange={handleChange}
+                            style={inputStyle}
                             required
                         />
                     </div>
                     
                     <div style={{ marginBottom: '24px' }}>
-                        <label style={{ 
-                            display: 'block', 
-                            marginBottom: '8px',
-                            fontWeight: '500',
-                            color: 'var(--color-purple)',
-                            fontSize: '16px',
-                            fontFamily: 'Special Gothic Expanded One, sans-serif'
-                        }}>
-                            Email
-                        </label>
+                        <label style={labelStyle}>Email</label>
                         <input
                             type="email"
-                            value={email}
-                            onChange={(e) => setEmail(e.target.value)}
-                            style={{
-                                width: '100%',
-                                padding: '16px',
-                                border: '2px solid #cccccc',
-                                borderRadius: '12px',
-                                fontSize: '16px',
-                                transition: 'border-color 0.3s ease',
-                                fontFamily: 'Liter, Arial, sans-serif'
-                            }}
+                            name="email"
+                            value={formData.email}
+                            onChange={handleChange}
+                            style={inputStyle}
                             required
                         />
                     </div>
                     
                     <div style={{ marginBottom: '24px' }}>
-                        <label style={{ display: 'block', marginBottom: '8px', fontWeight: '500', color: 'var(--color-purple)', fontSize: '16px', fontFamily: 'Special Gothic Expanded One, sans-serif' }}>
-                            Phone Number
-                        </label>
+                        <label style={labelStyle}>Phone Number</label>
                         <input
                             type="tel"
-                            value={phone}
-                            onChange={(e) => setPhone(e.target.value)}
-                            style={{
-                                width: '100%',
-                                padding: '16px',
-                                border: '2px solid #cccccc',
-                                borderRadius: '12px',
-                                fontSize: '16px',
-                                transition: 'border-color 0.3s ease',
-                                fontFamily: 'Liter, Arial, sans-serif'
-                            }}
+                            name="phone"
+                            value={formData.phone}
+                            onChange={handleChange}
+                            style={inputStyle}
                             placeholder="(optional)"
                         />
                     </div>
                     
                     <div style={{ marginBottom: '32px' }}>
-                        <label style={{ 
-                            display: 'block', 
-                            marginBottom: '8px',
-                            fontWeight: '500',
-                            color: 'var(--color-purple)',
-                            fontSize: '16px',
-                            fontFamily: 'Special Gothic Expanded One, sans-serif'
-                        }}>
-                            Message
-                        </label>
+                        <label style={labelStyle}>Message</label>
                         <textarea
-                            value={message}
-                            onChange={(e) => setMessage(e.target.value)}
+                            name="message"
+                            value={formData.message}
+                            onChange={handleChange}
                             rows={5}
                             style={{
-                                width: '100%',
-                                padding: '16px',
-                                border: '2px solid #cccccc',
-                                borderRadius: '12px',
-                                fontSize: '16px',
+                                ...inputStyle,
                                 resize: 'vertical',
-                                minHeight: '120px',
-                                transition: 'border-color 0.3s ease',
-                                fontFamily: 'Liter, Arial, sans-serif'
+                                minHeight: '120px'
                             }}
                             placeholder="Tell us about your business and how we can help..."
                             required
@@ -222,6 +191,4 @@ const Contact: React.FC = () => {
             </div>
         </section>
     );
-};
-
-export default Contact;
+}

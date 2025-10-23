@@ -1,22 +1,45 @@
-import React from 'react';
 import Image from 'next/image';
 
-const Footer: React.FC = () => {
+const footerStyle = {
+    background: 'black',
+    color: 'white',
+    padding: '48px 0 32px 0',
+    width: '100%'
+};
+
+const containerStyle = {
+    display: 'flex',
+    flexDirection: 'column' as const,
+    alignItems: 'center',
+    gap: '32px',
+    maxWidth: '1200px',
+    margin: '0 auto'
+};
+
+const socialLinkStyle = {
+    display: 'inline-flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    width: 40,
+    height: 40
+};
+
+const iconStyle = {
+    width: 28,
+    height: 28,
+    display: 'block'
+};
+
+const smallIconStyle = {
+    width: 20,
+    height: 20,
+    verticalAlign: 'middle'
+};
+
+export default function Footer() {
     return (
-        <footer style={{
-            background: 'black',
-            color: 'white',
-            padding: '48px 0 32px 0',
-            width: '100%',
-        }}>
-            <div className="container" style={{
-                display: 'flex',
-                flexDirection: 'column',
-                alignItems: 'center',
-                gap: '32px',
-                maxWidth: '1200px',
-                margin: '0 auto',
-            }}>
+        <footer style={footerStyle}>
+            <div className="container" style={containerStyle}>
                 {/* Logo */}
                 <div style={{ marginBottom: '8px' }}>
                     <Image
@@ -31,11 +54,11 @@ const Footer: React.FC = () => {
 
                 {/* Social icons */}
                 <div style={{ display: 'flex', gap: '24px', marginBottom: '8px' }}>
-                    <a href="https://www.instagram.com/mytradekithq/?hl=en" target="_blank" rel="noopener" aria-label="Instagram" style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: 40, height: 40 }}>
-                        <img src="/Social media icons/instagram-svgrepo-com.svg" alt="Instagram" style={{ width: 28, height: 28, display: 'block' }} />
+                    <a href="https://www.instagram.com/mytradekithq/?hl=en" target="_blank" rel="noopener" aria-label="Instagram" style={socialLinkStyle}>
+                        <img src="/Social media icons/instagram-svgrepo-com.svg" alt="Instagram" style={iconStyle} />
                     </a>
-                    <a href="https://linkedin.com" target="_blank" rel="noopener" aria-label="LinkedIn" style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: 40, height: 40 }}>
-                        <img src="/Social media icons/linkedin-svgrepo-com.svg" alt="LinkedIn" style={{ width: 28, height: 28, display: 'block' }} />
+                    <a href="https://linkedin.com" target="_blank" rel="noopener" aria-label="LinkedIn" style={socialLinkStyle}>
+                        <img src="/Social media icons/linkedin-svgrepo-com.svg" alt="LinkedIn" style={iconStyle} />
                     </a>
                 </div>
 
@@ -43,11 +66,11 @@ const Footer: React.FC = () => {
                 <div style={{ textAlign: 'center', marginBottom: '8px', fontSize: '16px', color: 'rgba(255,255,255,0.92)' }}>
                     <div style={{ marginBottom: '4px', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '16px' }}>
                         <span style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                            <img src="/Social media icons/phone-svgrepo-com.svg" alt="Phone" style={{ width: 20, height: 20, verticalAlign: 'middle' }} />
+                            <img src="/Social media icons/phone-svgrepo-com.svg" alt="Phone" style={smallIconStyle} />
                             07344144672
                         </span>
                         <span style={{ marginLeft: '16px', display: 'flex', alignItems: 'center', gap: '8px' }}>
-                            <img src="/Social media icons/envelope-svgrepo-com.svg" alt="Email" style={{ width: 20, height: 20, verticalAlign: 'middle' }} />
+                            <img src="/Social media icons/envelope-svgrepo-com.svg" alt="Email" style={smallIconStyle} />
                             <a href="mailto:mytradekit@gmail.com" style={{ color: 'white', textDecoration: 'underline' }}>mytradekit@gmail.com</a>
                         </span>
                     </div>
@@ -61,6 +84,4 @@ const Footer: React.FC = () => {
             </div>
         </footer>
     );
-};
-
-export default Footer;
+}
