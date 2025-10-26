@@ -77,7 +77,7 @@ const testimonials = [
 ];
 
 export default function Testimonials() {
-    const bgUrl = encodeURI('/Brand gradients.png');
+    const bgUrl = encodeURI('/Brand gradient.webp');
     return (
         <div style={{ width: '100%', position: 'relative', overflow: 'hidden' }}>
             {/* Full-bleed flipped gradient background */}

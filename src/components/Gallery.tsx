@@ -1,16 +1,18 @@
 // Auto-scrolling gallery using images from /public/Gallery
 const images = [
-  '/Gallery/11_envelope and app.webp',
-  '/Gallery/13_lanyard and paper.webp',
-  '/Gallery/14-14.webp',
-  '/Gallery/1_1st.webp',
-  '/Gallery/3-03.webp',
-  '/Gallery/4_mockup real_mockup real.webp',
-  '/Gallery/5-05.webp',
-  '/Gallery/5_grid systm.webp',
-  '/Gallery/7-07.webp',
-  '/Gallery/devices_devices.webp',
-  '/Gallery/heronowording_Hero.webp',
+  '/Gallery/1.webp',
+  '/Gallery/2.webp',
+  '/Gallery/3.webp',
+  '/Gallery/4.webp',
+  '/Gallery/5.webp',
+  '/Gallery/7.webp',
+  '/Gallery/8.webp',
+  '/Gallery/9.webp',
+  '/Gallery/10.webp',
+  '/Gallery/11.webp',
+  '/Gallery/12.webp',
+  '/Gallery/13.webp',
+  '/Gallery/14.webp',
 ];
 
 export default function Gallery() {

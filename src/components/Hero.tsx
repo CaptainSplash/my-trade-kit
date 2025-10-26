@@ -1,7 +1,7 @@
 const heroStyle = {
     paddingTop: '280px',
     paddingBottom: '160px',
-    backgroundImage: 'url("/Brand gradients.png")',
+    backgroundImage: 'url("/Brand gradient.webp")',
     backgroundSize: 'cover',
     backgroundPosition: 'center top',
     backgroundRepeat: 'no-repeat',

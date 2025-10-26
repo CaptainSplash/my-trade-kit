@@ -32,7 +32,7 @@ export default function RootLayout({
           rel="stylesheet" 
         />
         {/* Preload critical hero background image */}
-        <link rel="preload" href="/Brand gradients.png" as="image" />
+        <link rel="preload" href="/Brand gradient.webp" as="image" />
         {/* Preload critical logo */}
         <link rel="preload" href="/Logo white.png" as="image" />
       </head>
