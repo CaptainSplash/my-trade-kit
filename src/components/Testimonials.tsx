@@ -2,18 +2,22 @@ const cardStyle = {
     padding: '24px',
     backgroundColor: 'rgba(255, 255, 255, 0.1)',
     borderRadius: '16px',
-    backdropFilter: 'blur(10px)'
+    backdropFilter: 'blur(10px)',
+    minHeight: '100%',
+    display: 'flex',
+    flexDirection: 'column' as const
 };
 
 const imageContainerStyle = {
-    width: '100px',
-    height: '100px',
+    width: '80px',
+    height: '80px',
     borderRadius: '50%',
     overflow: 'hidden',
-    margin: '0 auto 20px auto',
+    margin: '0 auto 16px auto',
     boxShadow: '0 8px 32px rgba(0,0,0,0.28)',
     transform: 'rotateY(-8deg) scale(1.04)',
-    background: '#111'
+    background: '#111',
+    flexShrink: 0
 };
 
 const imageStyle = {
@@ -25,28 +29,32 @@ const imageStyle = {
 
 const titleStyle = {
     fontFamily: "'Special Gothic Expanded One', sans-serif",
-    fontSize: '20px',
-    marginBottom: '12px',
-    color: '#ffffff'
+    fontSize: '18px',
+    marginBottom: '10px',
+    color: '#ffffff',
+    lineHeight: '1.3'
 };
 
 const disclaimerStyle = {
-    fontSize: '14px',
-    marginBottom: '16px',
+    fontSize: '12px',
+    marginBottom: '12px',
     fontStyle: 'italic' as const,
-    color: 'rgba(255, 255, 255, 0.7)'
+    color: 'rgba(255, 255, 255, 0.6)',
+    lineHeight: '1.4'
 };
 
 const quoteStyle = {
-    fontSize: '16px',
-    marginBottom: '16px',
-    lineHeight: '1.6',
-    color: '#ffffff'
+    fontSize: '15px',
+    marginBottom: '14px',
+    lineHeight: '1.5',
+    color: '#ffffff',
+    flex: 1
 };
 
 const authorStyle = {
-    fontSize: '14px',
-    color: 'rgba(255, 255, 255, 0.7)'
+    fontSize: '13px',
+    color: 'rgba(255, 255, 255, 0.7)',
+    marginTop: 'auto'
 };
 
 const testimonials = [
@@ -97,30 +105,41 @@ export default function Testimonials() {
             />
             <section id="testimonials" className="section-spacing" style={{ position: 'relative', zIndex: 1 }}>
                 <div className="container">
-                    <div style={{ textAlign: 'center', marginBottom: '40px' }}>
+                    <div style={{ textAlign: 'center', marginBottom: '32px' }}>
                         <p style={{ fontSize: '14px', color: '#ffffff' }}>Trusted by small businesses across the UK</p>
                     </div>
-                <div className="testimonials-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '24px' }}>
-                    {testimonials.map((testimonial, index) => (
-                        <div key={index} style={cardStyle}>
-                            <div style={imageContainerStyle}>
-                                <img src={testimonial.image} alt={testimonial.alt} style={imageStyle} loading="lazy" />
+                    {/* Desktop: 3-column grid; Mobile: horizontal scroll with snap */}
+                    <div className="testimonials-grid">
+                        {testimonials.map((testimonial, index) => (
+                            <div key={index} className="testimonial-card" style={cardStyle}>
+                                <div style={imageContainerStyle}>
+                                    <img src={testimonial.image} alt={testimonial.alt} style={imageStyle} loading="lazy" />
+                                </div>
+                                <h3 style={titleStyle}>
+                                    {testimonial.title}
+                                </h3>
+                                <p style={disclaimerStyle}>
+                                    {testimonial.disclaimer}
+                                </p>
+                                <p style={quoteStyle}>
+                                    {testimonial.quote}
+                                </p>
+                                <p style={authorStyle}>
+                                    {testimonial.author}
+                                </p>
                             </div>
-                            <h3 style={titleStyle}>
-                                {testimonial.title}
-                            </h3>
-                            <p style={disclaimerStyle}>
-                                {testimonial.disclaimer}
-                            </p>
-                            <p style={quoteStyle}>
-                                {testimonial.quote}
-                            </p>
-                            <p style={authorStyle}>
-                                {testimonial.author}
-                            </p>
-                        </div>
-                    ))}
-                </div>
+                        ))}
+                    </div>
+                    {/* Mobile swipe hint */}
+                    <div className="swipe-hint" style={{ 
+                        textAlign: 'center', 
+                        marginTop: '16px',
+                        fontSize: '13px',
+                        color: 'rgba(255, 255, 255, 0.5)',
+                        display: 'none'
+                    }}>
+                        ← Swipe to see more →
+                    </div>
                 </div>
             </section>
         </div>

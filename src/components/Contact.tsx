@@ -6,18 +6,18 @@ const FORMSPREE_ENDPOINT = "https://formspree.io/f/mvgwnpry";
 
 const labelStyle = {
     display: 'block',
-    marginBottom: '8px',
+    marginBottom: '6px',
     fontWeight: '500',
     color: 'var(--color-purple)',
-    fontSize: '16px',
+    fontSize: '14px',
     fontFamily: 'Special Gothic Expanded One, sans-serif'
 } as const;
 
 const inputStyle = {
     width: '100%',
-    padding: '16px',
+    padding: '12px 14px',
     border: '2px solid #cccccc',
-    borderRadius: '12px',
+    borderRadius: '10px',
     fontSize: '16px',
     transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
     fontFamily: 'Liter, Arial, sans-serif',
@@ -94,62 +94,65 @@ export default function Contact() {
                 pointerEvents: 'none',
             }} />
             <div className="container" style={{ position: 'relative', zIndex: 1 }}>
-                <div style={{ textAlign: 'center', marginBottom: '60px' }}>
+                <div className="contact-header" style={{ textAlign: 'center', marginBottom: '40px' }}>
                     <h2 style={{
                         fontSize: '40px',
                         letterSpacing: '-0.02em',
-                        marginBottom: '20px',
+                        marginBottom: '16px',
                         color: 'white',
                     }}>
                         Let's make your digital presence effortless.
                     </h2>
                     <p style={{
-                        fontSize: '18px',
+                        fontSize: '17px',
                         color: 'rgba(255, 255, 255, 0.9)',
-                        maxWidth: '600px',
+                        maxWidth: '560px',
                         margin: '0 auto',
+                        lineHeight: '1.5'
                     }}>
-                        Ready to take the stress out of your online presence? Let's chat about how we can help your business thrive.
+                        Ready to take the stress out of your online presence? Let's chat about how we can help.
                     </p>
                 </div>
                 
-                <form onSubmit={handleSubmit} style={{ 
-                    maxWidth: '500px', 
+                <form onSubmit={handleSubmit} className="contact-form" style={{ 
+                    maxWidth: '540px', 
                     margin: '0 auto',
                     background: 'white',
-                    padding: '40px',
-                    borderRadius: '24px',
+                    padding: '32px',
+                    borderRadius: '20px',
                     boxShadow: '0 20px 40px rgba(0, 0, 0, 0.2)'
                 }}>
-                    <div style={{ marginBottom: '24px' }}>
-                        <label style={labelStyle}>Name</label>
-                        <input
-                            type="text"
-                            name="name"
-                            value={formData.name}
-                            onChange={handleChange}
-                            style={inputStyle}
-                            onFocus={(e) => e.currentTarget.style.borderColor = 'var(--color-purple)'}
-                            onBlur={(e) => e.currentTarget.style.borderColor = '#cccccc'}
-                            required
-                        />
+                    <div className="form-row" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px', marginBottom: '18px' }}>
+                        <div>
+                            <label style={labelStyle}>Name</label>
+                            <input
+                                type="text"
+                                name="name"
+                                value={formData.name}
+                                onChange={handleChange}
+                                style={inputStyle}
+                                onFocus={(e) => e.currentTarget.style.borderColor = 'var(--color-purple)'}
+                                onBlur={(e) => e.currentTarget.style.borderColor = '#cccccc'}
+                                required
+                            />
+                        </div>
+                        
+                        <div>
+                            <label style={labelStyle}>Email</label>
+                            <input
+                                type="email"
+                                name="email"
+                                value={formData.email}
+                                onChange={handleChange}
+                                style={inputStyle}
+                                onFocus={(e) => e.currentTarget.style.borderColor = 'var(--color-purple)'}
+                                onBlur={(e) => e.currentTarget.style.borderColor = '#cccccc'}
+                                required
+                            />
+                        </div>
                     </div>
                     
-                    <div style={{ marginBottom: '24px' }}>
-                        <label style={labelStyle}>Email</label>
-                        <input
-                            type="email"
-                            name="email"
-                            value={formData.email}
-                            onChange={handleChange}
-                            style={inputStyle}
-                            onFocus={(e) => e.currentTarget.style.borderColor = 'var(--color-purple)'}
-                            onBlur={(e) => e.currentTarget.style.borderColor = '#cccccc'}
-                            required
-                        />
-                    </div>
-                    
-                    <div style={{ marginBottom: '24px' }}>
+                    <div style={{ marginBottom: '18px' }}>
                         <label style={labelStyle}>Phone Number</label>
                         <input
                             type="tel"
@@ -159,25 +162,25 @@ export default function Contact() {
                             style={inputStyle}
                             onFocus={(e) => e.currentTarget.style.borderColor = 'var(--color-purple)'}
                             onBlur={(e) => e.currentTarget.style.borderColor = '#cccccc'}
-                            placeholder="(optional)"
+                            placeholder="Optional"
                         />
                     </div>
                     
-                    <div style={{ marginBottom: '32px' }}>
+                    <div style={{ marginBottom: '24px' }}>
                         <label style={labelStyle}>Message</label>
                         <textarea
                             name="message"
                             value={formData.message}
                             onChange={handleChange}
-                            rows={5}
+                            rows={4}
                             style={{
                                 ...inputStyle,
                                 resize: 'vertical',
-                                minHeight: '120px'
+                                minHeight: '100px'
                             }}
                             onFocus={(e) => e.currentTarget.style.borderColor = 'var(--color-purple)'}
                             onBlur={(e) => e.currentTarget.style.borderColor = '#cccccc'}
-                            placeholder="Tell us about your business and how we can help..."
+                            placeholder="Tell us how we can help..."
                             required
                         />
                     </div>
@@ -188,8 +191,8 @@ export default function Contact() {
                         className="btn-primary" 
                         style={{ 
                             width: '100%',
-                            fontSize: '18px',
-                            padding: '18px 32px',
+                            fontSize: '17px',
+                            padding: '15px 28px',
                             opacity: isSubmitting ? 0.7 : 1,
                             cursor: isSubmitting ? 'not-allowed' : 'pointer'
                         }}

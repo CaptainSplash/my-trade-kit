@@ -1,11 +1,11 @@
 const heroStyle = {
-    paddingTop: '280px',
-    paddingBottom: '160px',
+    paddingTop: '320px',
+    paddingBottom: '200px',
     backgroundImage: 'url("/Brand gradient.webp")',
     backgroundSize: 'cover',
     backgroundPosition: 'center top',
     backgroundRepeat: 'no-repeat',
-    minHeight: '600px',
+    minHeight: '700px',
     width: '100vw',
     maxWidth: '100vw',
     position: 'relative' as const,
@@ -19,19 +19,20 @@ const heroStyle = {
 };
 
 const titleStyle = {
-    fontSize: '64px',
-    lineHeight: '1.1',
-    marginBottom: '24px',
+    fontSize: '68px',
+    lineHeight: '1.15',
+    marginBottom: '32px',
     letterSpacing: '-0.02em',
     fontWeight: '400'
 };
 
 const subtextStyle = {
-    fontSize: '20px',
-    marginBottom: '40px',
-    maxWidth: '600px',
-    margin: '0 auto 40px auto',
-    opacity: '0.95'
+    fontSize: '22px',
+    marginBottom: '48px',
+    maxWidth: '640px',
+    margin: '0 auto 48px auto',
+    opacity: '0.95',
+    lineHeight: '1.5'
 };
 
 export default function Hero() {
@@ -44,7 +45,7 @@ export default function Hero() {
                 <p className="hero-subtext" style={subtextStyle}>
                     Your all-in-one digital partner for websites, marketing, and social — helping your business show up, stand out, and succeed online.
                 </p>
-                <a href="#contact" className="btn-primary" style={{ fontSize: '18px', padding: '20px 40px' }}>
+                <a href="#contact" className="btn-primary" style={{ fontSize: '19px', padding: '22px 44px' }}>
                     Get Started
                 </a>
             </div>
