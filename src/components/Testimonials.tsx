@@ -59,7 +59,7 @@ const authorStyle = {
 
 const testimonials = [
     {
-        image: '/Testimonial images/childcare.jpg',
+        image: '/Testimonial images/Childcare.webp',
         alt: 'Childcare business',
         title: 'Saved hours every week on updates',
         disclaimer: 'Example scenario based on the type of results our clients aim for:',
@@ -67,7 +67,7 @@ const testimonials = [
         author: '— Example: Emma, Owner, Little Oak Childcare'
     },
     {
-        image: '/Testimonial images/cleaner.jpg',
+        image: '/Testimonial images/Cleaner.webp',
         alt: 'Cleaning business',
         title: 'Website brought in 3× more enquiries',
         disclaimer: 'Typical outcome we help clients work towards:',
@@ -75,7 +75,7 @@ const testimonials = [
         author: '— Example: Tom, Owner, Sparkle Clean Ltd'
     },
     {
-        image: '/Testimonial images/plumber.jpg',
+        image: '/Testimonial images/Plumber.webp',
         alt: 'Plumbing business',
         title: 'Bookings up by 40% in one month',
         disclaimer: 'Illustrative case of how digital care can deliver results:',

@@ -1,6 +1,5 @@
 "use client";
 import { useEffect, useRef, useState, useCallback } from 'react';
-import Image from 'next/image';
 
 const buttonStyle = {
   display: 'flex',
@@ -68,17 +67,16 @@ export default function Header() {
           justifyContent: 'space-between',
           width: '100%'
         }}>
-          <div className="logo site-logo flex items-center">
-            <Image 
+          <a href="#hero" className="logo site-logo flex items-center" style={{ cursor: 'pointer', textDecoration: 'none' }}>
+            <img 
               src={logoSrc} 
               alt="My Trade Kit Logo" 
               width={180} 
               height={60}
-              priority
               className="site-logo-img"
               style={{ objectFit: 'contain' }}
             />
-          </div>
+          </a>
           <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }} className="header-buttons hidden md:flex">
             <div style={buttonStyle}>
               📞 07344144672
