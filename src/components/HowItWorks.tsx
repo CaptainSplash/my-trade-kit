@@ -1,16 +1,20 @@
 const textBoxStyle = {
-  minHeight: '200px',
-  padding: '20px',
+  minHeight: '100px',
+  height: '240px',
+  padding: '12px 16px',
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
   color: '#000000',
-  borderRadius: '8px'
+  borderRadius: '12px',
+  backgroundColor: 'rgba(255, 250, 245, 0.6)',
+  border: '1px solid rgba(81, 61, 134, 0.08)'
 };
 
 const imageBoxStyle = {
-  minHeight: '200px',
-  padding: '20px',
+  minHeight: '100px',
+  height: '240px',
+  padding: '16px',
   background: 'transparent',
   display: 'flex',
   alignItems: 'center',
@@ -30,25 +34,33 @@ const imageContainerStyle = {
 const imageStyle = {
   width: '100%',
   height: '100%',
-  objectFit: 'cover' as const
+  objectFit: 'contain' as const
 };
 
 const titleStyle = {
   fontWeight: 'bold',
-  marginBottom: '8px',
+  marginBottom: '12px',
   fontFamily: "'Special Gothic Expanded One', sans-serif",
-  fontSize: '22px'
+  fontSize: '24px',
+  lineHeight: '1.3',
+  color: '#513d86'
 };
 
 const descStyle = {
-  fontSize: '16px'
+  fontSize: '16px',
+  lineHeight: '1.6',
+  color: '#333333'
 };
 
 export default function HowItWorks() {
   return (
-    <div style={{ backgroundColor: '#ffffff', width: '100%' }}>
-      <section id="how-it-works" aria-labelledby="how-it-works-heading" className="section-spacing mx-auto max-w-6xl px-4" style={{ color: '#000000' }}>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '24px' }}>
+    <div style={{ 
+      background: 'linear-gradient(180deg, rgba(255, 250, 245, 0.4) 0%, rgba(255, 250, 245, 0.8) 50%, rgba(255, 250, 245, 0.4) 100%)',
+      width: '100%',
+      position: 'relative' as const
+    }}>
+      <section id="how-it-works" aria-labelledby="how-it-works-heading" className="mx-auto max-w-6xl px-4" style={{ color: '#000000', paddingTop: '80px', paddingBottom: '80px' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '16px' }}>
           {/* Box 1 */}
           <div style={textBoxStyle}>
             <div style={{ textAlign: 'left' }}>

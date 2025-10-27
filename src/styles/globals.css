@@ -597,7 +597,19 @@ footer {
 @media (max-width: 767px) {
   #how-it-works .mx-auto > div {
     grid-template-columns: 1fr !important;
+    gap: 16px !important;
   }
+  
+  /* Reduce image/box sizes on mobile for compactness */
+  #how-it-works div[style*="height: '325px'"] {
+    height: 280px !important;
+  }
+  
+  #how-it-works section {
+    padding-top: 50px !important;
+    padding-bottom: 50px !important;
+  }
+  
   .how-it-works-box-3 {
     order: 4;
   }
@@ -611,11 +623,22 @@ footer {
     order: 6;
   }
   
-  /* Smaller text on mobile for How It Works */
-  #how-it-works div[style*="fontSize: '22px'"] {
-    font-size: 18px !important;
+  /* Adjust text on mobile for How It Works */
+  #how-it-works div[style*="fontSize: '24px'"] {
+    font-size: 20px !important;
   }
   #how-it-works div[style*="fontSize: '16px'"] {
-    font-size: 14px !important;
+    font-size: 15px !important;
+  }
+}
+
+/* Tablet sizes - also increase box heights */
+@media (min-width: 768px) and (max-width: 1024px) {
+  #how-it-works div[style*="height: '325px'"] {
+    height: 375px !important;
+  }
+  
+  #how-it-works .mx-auto > div {
+    gap: 12px !important;
   }
 }
