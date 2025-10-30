@@ -8,6 +8,13 @@ export const metadata = {
   viewport: 'width=device-width, initial-scale=1',
   robots: 'index, follow',
   metadataBase: new URL('https://mytradekit.vercel.app'),
+  icons: {
+    icon: [
+      { url: '/favicon.ico', sizes: 'any' },
+      { url: '/favicon.png', type: 'image/png' },
+    ],
+    apple: '/favicon.png',
+  },
   openGraph: {
     title: 'My Trade Kit - Digital care for busy businesses',
     description: 'We take the stress out of websites, branding, and online presence so you can focus on what you do best – running your business.',
@@ -24,7 +31,6 @@ export default function RootLayout({
   return (
     <html lang="en" style={{ margin: 0, padding: 0 }}>
       <head>
-        <link rel="icon" type="image/png" href="/White on black.png" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link 
