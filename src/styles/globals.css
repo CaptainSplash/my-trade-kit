@@ -23,6 +23,7 @@
     padding-top: 140px !important;
     padding-bottom: 80px !important;
     min-height: 420px !important;
+    height: auto !important;
   }
 }
 
@@ -40,6 +41,7 @@
     padding-top: 220px !important;
     padding-bottom: 140px !important;
     min-height: 560px !important;
+    height: auto !important;
   }
 }
 /* Get Started section: stack image and box pairs vertically on mobile */

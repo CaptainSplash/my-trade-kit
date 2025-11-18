@@ -1,11 +1,12 @@
 const heroStyle = {
-    paddingTop: '320px',
-    paddingBottom: '200px',
+    paddingTop: '120px',
+    paddingBottom: '120px',
     backgroundImage: 'url("/Brand gradient.webp")',
     backgroundSize: 'cover',
     backgroundPosition: 'center top',
     backgroundRepeat: 'no-repeat',
-    minHeight: '700px',
+    minHeight: '85vh',
+    height: '85vh',
     width: '100vw',
     maxWidth: '100vw',
     position: 'relative' as const,
@@ -15,7 +16,9 @@ const heroStyle = {
     marginRight: '-50vw',
     marginTop: '0',
     zIndex: 1,
-    willChange: 'transform'
+    willChange: 'transform',
+    display: 'flex',
+    alignItems: 'center'
 };
 
 const titleStyle = {
